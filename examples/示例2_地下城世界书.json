@@ -1,0 +1,50 @@
+{
+  "name": "地下城设定",
+  "entries": [
+    {
+      "identifier": "dungeon-floor-init",
+      "name": "层数初始化",
+      "content": "【已进入第 {{getvar::floor}} 层。敌人数：{{setvar::enemies_left::5}}，陷阱数：{{setvar::trap_count::0}}】",
+      "enabled": true,
+      "strategy": "keyword",
+      "keywords": ["进入", "开始探索", "初始化"],
+      "scanDepth": 1,
+      "injectionPosition": "lorebookAfter",
+      "probability": 100,
+      "sticky": 0,
+      "cooldown": 0,
+      "delay": 0
+    },
+    {
+      "identifier": "dungeon-main-hall",
+      "name": "主厅",
+      "content": "这是一座阴暗潮湿的地下主厅。空气中弥漫着潮湿的霉味，墙壁上刻满了无法辨认的古老符文。微弱的光芒从头顶的石缝中透下，照亮了散落在地上的碎骨。主厅有三个出口——北面是一条向下延伸的石阶，东面是一道半掩的铁门，西面是一个被藤蔓覆盖的洞口。",
+      "enabled": true,
+      "strategy": "keyword",
+      "keywords": ["主厅", "大厅", "地下室"],
+      "secondaryKeywords": ["来到", "进入"],
+      "secondaryKeywordStrategy": "andAny",
+      "scanDepth": 2,
+      "caseSensitive": false,
+      "matchWholeWord": false,
+      "injectionPosition": "lorebookBefore",
+      "probability": 100,
+      "sticky": 0,
+      "cooldown": 0
+    },
+    {
+      "identifier": "dungeon-combat-status",
+      "name": "战斗状态",
+      "content": "【战斗中：HP {{getvar::hp}} / 100 | 剩余敌人: {{getvar::enemies_left}} | 陷阱触发: {{getvar::trap_count}}】",
+      "enabled": true,
+      "strategy": "keyword",
+      "keywords": ["战斗", "攻击", "防御", "受伤", "挥剑", "施法"],
+      "scanDepth": 1,
+      "injectionPosition": "lorebookAfter",
+      "probability": 80,
+      "sticky": 1,
+      "cooldown": 0,
+      "delay": 0
+    }
+  ]
+}

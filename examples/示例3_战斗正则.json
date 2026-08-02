@@ -1,0 +1,65 @@
+{
+  "name": "战斗辅助",
+  "entries": [
+    {
+      "name": "HP减少",
+      "findRegex": "-hp(\\d+)",
+      "replaceString": "{{decvar::hp::$1}}",
+      "placements": ["user"],
+      "timing": "send",
+      "enabled": true,
+      "trimStrings": [],
+      "substitution": "raw",
+      "minDepth": null,
+      "maxDepth": null
+    },
+    {
+      "name": "HP增加",
+      "findRegex": "\\+hp(\\d+)",
+      "replaceString": "{{addvar::hp::$1}}",
+      "placements": ["user"],
+      "timing": "send",
+      "enabled": true,
+      "trimStrings": [],
+      "substitution": "raw",
+      "minDepth": null,
+      "maxDepth": null
+    },
+    {
+      "name": "层数增加",
+      "findRegex": "下一层|下一楼|继续",
+      "replaceString": "{{incvar::floor}}",
+      "placements": ["user"],
+      "timing": "send",
+      "enabled": true,
+      "trimStrings": [],
+      "substitution": "raw",
+      "minDepth": null,
+      "maxDepth": null
+    },
+    {
+      "name": "敌人减少",
+      "findRegex": "击败|击杀|消灭",
+      "replaceString": "{{decvar::enemies_left}}",
+      "placements": ["user"],
+      "timing": "send",
+      "enabled": true,
+      "trimStrings": [],
+      "substitution": "raw",
+      "minDepth": null,
+      "maxDepth": null
+    },
+    {
+      "name": "状态栏格式化",
+      "findRegex": "\\[状态\\](.*?)\\[/状态\\]",
+      "replaceString": "<pre style='background:#1a1a2e;color:#eee;padding:8px;border-radius:4px'>$1</pre>",
+      "placements": ["char"],
+      "timing": "display",
+      "enabled": true,
+      "trimStrings": [],
+      "substitution": "none",
+      "minDepth": null,
+      "maxDepth": null
+    }
+  ]
+}
